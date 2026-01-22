@@ -9,7 +9,7 @@ st.set_page_config(
 )
 
 
-st.image("hhhj.jpg", width=2000)   
+st.image("hhhj_1.jpg", width=2000)   
 
 import streamlit as st
 
