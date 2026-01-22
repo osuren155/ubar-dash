@@ -12,7 +12,8 @@ st.set_page_config(
 )
 
 # ---------------- IMAGE PATH ----------------
-image_path = r"D:\UB\hhhj.jpg"
+
+image_path = "hhhj.jpg"
 
 # Image ko base64 me convert karo
 with open(image_path, "rb") as f:
