@@ -12,7 +12,7 @@ if st.button("⬅ Back to Home", key="back_home_dash"):
     st.switch_page("Home.py")
 
 # data set#
-df = pd.read_csv(r"D:\ubar dash\UBAR\Ubar Row.csv")
+df = pd.read_csv("Ubar Row.csv")
 
 st.dataframe(df) 
 
