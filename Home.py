@@ -64,6 +64,11 @@ By leveraging **data-driven insights**, this dashboard helps:
 to improve **ride efficiency**, maximize **driver earnings**, and enhance **customer experience**.
 """, unsafe_allow_html=True)
 
+st.markdown(
+    "<p style='text-align:center; color:grey;'>Created by Surendra Oraon | Streamlit Dashboard</p>",
+    unsafe_allow_html=True
+)
+
 
 
    
