@@ -1,6 +1,3 @@
-# cd /d "D:\ubar dash"
-# py -m streamlit run home.py
-
 from PIL import Image
 import streamlit as st
 import base64
@@ -11,115 +8,66 @@ st.set_page_config(
     layout="wide"
 )
 
-# ---------------- IMAGE PATH ----------------
 
-image_path = "hhhj.jpg"
+st.image("hhhj.jpg", width=2000)   
 
-# Image ko base64 me convert karo
-with open(image_path, "rb") as f:
-    encoded = base64.b64encode(f.read()).decode()
+import streamlit as st
 
-# ---------------- RESPONSIVE BACKGROUND CSS ----------------
-st.markdown(
-    f"""
+col1, col2, col3 = st.columns([2.5, 1, 2.5])
+
+with col2:
+
+
+ st.markdown("""
     <style>
-    /* 🌍 Base setup */
-    html, body, .stApp {{
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-    }}
-
-    /* 🖥 Desktop / Laptop */
-    .stApp {{
-        background-image: url("data:image/jpg;base64,{encoded}");
-        background-size: cover;
-        background-position: center center;
-        background-repeat: no-repeat;
-    }}
-
-    /* 📱 Mobile & Tablet */
-    @media (max-width: 768px) {{
-        .stApp {{
-            background-size: contain;
-            background-position: center top;
-            background-color: black;
-        }}
-    }}
-
-    /* 📱 Small Mobile */
-    @media (max-width: 480px) {{
-        .stApp {{
-            background-size: contain;
-            background-position: center top;
-        }}
-    }}
-
-    /* 🔘 Button fixed bottom center */
-    div[data-testid="stButton"] {{
-        position: fixed;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-    }}
-
-    div[data-testid="stButton"] button {{
-        width: 200px;
-        font-size: 16px;
-        font-weight: 600;
-    }}
-    </style>
-    """,
-    unsafe_allow_html=True
-)
-
-st.markdown(
-    """
-    <style>
-    /* 🌍 Base setup */
-    html, body, .stApp {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow: hidden;
-        background-color: white;   /* 👈 WHITE background */
-    }
-
-    /* 🧼 Remove default Streamlit padding */
-    .main {
-        padding: 0;
-    }
-
-    /* 🔘 Button fixed bottom center */
-    div[data-testid="stButton"] {
-        position: fixed;
-        bottom: 30px;
-        left: 50%;
-        transform: translateX(-50%);
-        z-index: 9999;
-        display: flex;
-        justify-content: center;
-    }
-
-    /* 🎨 Button style */
-    div[data-testid="stButton"] button {
-        width: 200px;
-        font-size: 16px;
-        font-weight: 600;
+    div.stButton > button {
+        width: 150px;
+        height: 45px;
+        font-size: 18px;
+        margin: auto;
+        display: block;
+        background-color: #ffffff;
+        color: #000000;
+        border-radius: 8px;
+        border: 1px solid #000000;
     }
     </style>
-    """,
-    unsafe_allow_html=True
-)
-# ---------------- BUTTON ----------------
-if st.button("Go to Dashboard", key="go_dash"):
+""", unsafe_allow_html=True)
+
+ if st.button("Go to Dashboard", key="go_dash"):
     st.switch_page("pages/Dash.py")
+
+
+
+st.markdown("""
+## 🚗 Uber Dashboard Overview
+
+This dashboard provides an **in-depth analysis of Uber ride data**, focusing on key metrics and trends:
+
+- 🕒 **Trip Duration & Time of Day**  
+- 📍 **Pickup & Drop-off Locations**  
+- 💰 **Revenue & Pricing Patterns**  
+- 👥 **Driver & Rider Behavior**
+
+### 🎯 Objective
+The goal of this analysis is to:
+- Identify **high-demand and low-demand areas**
+- Analyze **ride patterns and peak hours**
+- Optimize **driver allocation and pricing strategies**
+
+### 💡 Impact
+By leveraging **data-driven insights**, this dashboard helps:
+- Uber management teams  
+- Data analysts  
+- Urban planners  
+
+to improve **ride efficiency**, maximize **driver earnings**, and enhance **customer experience**.
+""", unsafe_allow_html=True)
+
+
+
+   
+
 
 
 
